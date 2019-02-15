@@ -2,6 +2,7 @@ package fr.cleymax.builderutils;
 
 import fr.cleymax.builderutils.commands.CommandBlocks;
 import fr.cleymax.builderutils.commands.CommandBuilderUtils;
+import fr.cleymax.builderutils.inventory.BlocksGUI;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -56,6 +57,20 @@ public final class BuilderUtils extends JavaPlugin implements Listener
 		{
 			e.setCancelled(true);
 			e.getWhoClicked().getInventory().addItem(e.getCurrentItem());
+		}
+		else if (e.getClickedInventory().getName().equalsIgnoreCase("§3BuilderUtils"))
+		{
+			switch (e.getCurrentItem().getType())
+			{
+				case GRASS:
+					e.setCancelled(true);
+					BlocksGUI gui = new BlocksGUI();
+					gui.open((Player) e.getWhoClicked());
+					break;
+				default:
+					e.setCancelled(true);
+					break;
+			}
 		}
 	}
 	
