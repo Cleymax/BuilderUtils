@@ -17,7 +17,6 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.scheduler.BukkitRunnable;
 
 public final class BuilderUtils extends JavaPlugin implements Listener
 {
@@ -35,18 +34,6 @@ public final class BuilderUtils extends JavaPlugin implements Listener
 		getCommand("bu").setExecutor(new CommandBuilderUtils());
 		getCommand("blocks").setExecutor(new CommandBlocks());
 		
-	}
-	
-	private boolean isTop(Player p, Block b)
-	{
-		Location start = p.getEyeLocation().clone();
-		
-		while (!start.getBlock().equals(b) && start.distance(p.getEyeLocation()) < 6.0D)
-		{
-			start.add(p.getLocation().getDirection().multiply(0.05D));
-		}
-		
-		return start.getY() % 1.0D > 0.5D;
 	}
 	
 	@Override
