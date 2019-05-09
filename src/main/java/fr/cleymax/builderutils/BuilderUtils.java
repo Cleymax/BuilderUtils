@@ -52,12 +52,12 @@ public final class BuilderUtils extends JavaPlugin implements Listener
 	public void onInventoryClick(InventoryClickEvent e)
 	{
 		if (e.getCurrentItem().getType() == Material.AIR) return;
-		if (e.getClickedInventory().getName().contains("Blocks"))
+		if (e.getInventory().getName().contains("Blocks"))
 		{
 			e.setCancelled(true);
 			e.getWhoClicked().getInventory().addItem(e.getCurrentItem());
 		}
-		else if (e.getClickedInventory().getName().equalsIgnoreCase("§3BuilderUtils"))
+		else if (e.getInventory().getName().equalsIgnoreCase("§3BuilderUtils"))
 		{
 			switch (e.getCurrentItem().getType())
 			{
