@@ -51,7 +51,6 @@ public final class BuilderUtils extends JavaPlugin implements Listener
 	@EventHandler
 	public void onInventoryClick(InventoryClickEvent e)
 	{
-		if (e.getClickedInventory() == null || e.getCurrentItem() == null) return;
 		if (e.getCurrentItem().getType() == Material.AIR) return;
 		if (e.getClickedInventory().getName().contains("Blocks"))
 		{
