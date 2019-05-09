@@ -4,3 +4,7 @@ main: fr.cleymax.builderutils.BuilderUtils
 authors: [Cleymax]
 description: Plugin for help user to build
 website: https://cleymax.fr/
+
+commands:
+  bu:
+  blocks:
